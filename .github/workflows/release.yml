@@ -16,6 +16,8 @@ jobs:
       - name: Build project
         run: |
           zip --junk-paths my-artifact README.md
+      - name: Test
+        run: echo ${{ github.ref }}
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
